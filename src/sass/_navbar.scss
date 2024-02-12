@@ -1,0 +1,52 @@
+@use 'variables';
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin: auto;
+   padding: 56px 25px;
+   max-width: 1200px;
+
+   .navbar {
+      display: flex;
+
+      &__logo {
+         width: 82px;
+      }
+
+      &__menu {
+         list-style: none;
+         display: none;
+      }
+
+      &__btn-desktop {
+         display: none;
+      }
+
+      &__btn-mobile {
+         width: 26px;
+         height: 26px;
+         position: relative;
+
+         button {
+            border: none;
+            background-color: inherit;
+            position: absolute;
+            transition: all 0.1s linear;
+
+            img {
+               width: 100%;
+            }
+
+            &.hamburger {
+               top: 8px;
+            }
+
+            &:hover {
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,44 @@
+@use 'variables';
+
+section {
+   display: flex;
+   flex-direction: column;
+   max-width: map-get(variables.$maxWidthSection, mobile);
+   margin: auto;
+
+   .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .ilustration-desktop {
+         display: none;
+      }
+   }
+
+   .info {
+      text-align: center;
+      padding: variables.$infoPadding;
+      margin-top: 50px;
+
+      h4 {
+         @include variables.TitleMobile;
+         line-height: 1.15;
+         padding-bottom: 24px;
+      }
+
+      p {
+         @include variables.Paragraph;
+         color: variables.$VeryDarkGrayishBlue;
+         padding-bottom: 44px;
+      }
+   }
+
+   &.first-section h4:first-child {
+      padding-bottom: 14px;
+   }
+
+   &.second-section .info {
+      margin-top: 40px;
+   }
+}

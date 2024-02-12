@@ -1,0 +1,67 @@
+@use 'variables';
+
+footer {
+   background-color: variables.$VeryDarkBlackBlue;
+   border-top-right-radius: 100px;
+   padding-top: 76px;
+   padding-bottom: 70px;
+   margin-top: 50px;
+
+   .nav-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__logo {
+         margin-bottom: 35px;
+      }
+
+      &__menu-item {
+         text-align: center;
+         margin-top: 40px;
+
+         h6 {
+            font-size: 18px;
+            font-weight: 500;
+            font-family: UbuntuMedium;
+            color: variables.$White;
+         }
+
+         .options {
+            font-size: 18px;
+            font-family: UbuntuRegular;
+            color: variables.$GrayishBlue;
+            margin-top: 34px;
+
+            li {
+               margin-bottom: 11px;
+
+               span {
+                  position: relative;
+
+                  &::after {
+                     content: '';
+                     position: absolute;
+                     left: 0;
+                     bottom: -2px;
+                     width: 100%;
+                     height: 2px;
+                     background-color: variables.$GrayishBlue;
+                     opacity: 0;
+                     transition: all 0.1s linear;
+                  }
+
+                  &:hover {
+                     cursor: pointer;
+
+                     &::after {
+                        opacity: 1;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,98 @@
+@use 'variables';
+@use 'navbar';
+@use 'sass:color';
+
+header {
+   background-image: url('/src/assets/images/bg-pattern-intro-mobile.svg');
+   background-position: 35% -240px;
+   padding-bottom: 156px;
+   position: relative;
+   overflow: hidden;
+   border-bottom-left-radius: 100px;
+
+   .bg-img {
+      @include variables.Background;
+      background: linear-gradient(135deg, variables.$VeryLightRed, variables.$LightRed);
+   }
+
+   h1,
+   p {
+      font-family: Overpass;
+      color: white;
+      text-align: center;
+      padding: 0 35px;
+   }
+
+   h1 {
+      font-weight: variables.$OverpassSemiBold;
+      font-size: 34px;
+      margin-top: 56px;
+   }
+
+   p {
+      font-weight: variables.$OverpassLight;
+      font-size: 18px;
+      margin-top: 16px;
+   }
+
+   .btn-container-header {
+      text-align: center;
+      margin-top: 46px;
+
+      button {
+         font-family: UbuntuBold;
+         font-size: 16px;
+         width: 137px;
+         color: variables.$White;
+         background-color: inherit;
+         border: 1px solid variables.$White;
+         padding: 14px 0;
+         border-radius: 50px;
+         transition: all 0.1s linear;
+
+         &.free {
+            background-color: variables.$White;
+            border-color: inherit;
+            color: variables.$LightRed;
+            margin-right: 10px;
+
+            &:active {
+               background-color: variables.$VeryLightRed;
+               border-color: variables.$VeryLightRed;
+               color: variables.$White;
+            }
+         }
+
+         &:last-child:active {
+            background-color: variables.$White;
+            color: variables.$LightRed;
+         }
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         @media (min-width: 900px) {
+            &.free:hover {
+               background-color: variables.$VeryLightRed;
+               border-color: variables.$VeryLightRed;
+               color: variables.$White;
+
+               &:active {
+                  background-color: darken(variables.$VeryLightRed, 10);
+               }
+            }
+
+            &:last-child:hover {
+               background-color: variables.$White;
+               color: variables.$LightRed;
+
+               &:active {
+                  background-color: darken(variables.$White, 30);
+                  border-color: darken(variables.$White, 30);
+               }
+            }
+         }
+      }
+   }
+}

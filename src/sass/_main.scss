@@ -1,0 +1,65 @@
+@use 'variables';
+@use 'sections';
+
+main {
+   font-family: Overpass;
+
+   .title {
+      @include variables.TitleMobile;
+      text-align: center;
+      margin-top: 102px;
+      margin-bottom: 44px;
+   }
+}
+
+.middle-container {
+   position: relative;
+   background-image: url('/src/assets/images/bg-pattern-circles.svg');
+   background-position: 50% -235px;
+   background-size: 600px;
+   background-repeat: no-repeat;
+   border-bottom-left-radius: 100px;
+   border-top-right-radius: 100px;
+   margin-top: 224px;
+   margin-bottom: 62px;
+
+   .bg-img {
+      @include variables.Background;
+      background: linear-gradient(to right, variables.$VeryDarkGrayBlue, variables.$VeryDarkDesaturatedBlue);
+      border-bottom-left-radius: 100px;
+      border-top-right-radius: 100px;
+   }
+
+   .middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 115px;
+      max-width: map-get(variables.$maxWidthSection, mobile);
+      margin: auto;
+
+      &__img {
+         width: 382px;
+         position: absolute;
+         top: -186px;
+      }
+
+      &__info {
+         color: variables.$White;
+         text-align: center;
+         padding: variables.$infoPadding;
+         margin-top: 226px;
+
+         h3 {
+            font-size: 40px;
+            font-weight: variables.$OverpassSemiBold;
+            line-height: 1.25;
+            padding-bottom: 16px;
+         }
+
+         p {
+            @include variables.Paragraph;
+         }
+      }
+   }
+}

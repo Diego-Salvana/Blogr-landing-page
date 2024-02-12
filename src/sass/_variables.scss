@@ -1,0 +1,71 @@
+@font-face {
+   font-family: Overpass;
+   src: url('/src/assets/fonts/Overpass-VariableFont_wght.ttf');
+}
+@font-face {
+   font-family: UbuntuRegular;
+   src: url('/src/assets/fonts/Ubuntu-Regular.ttf');
+}
+@font-face {
+   font-family: UbuntuMedium;
+   src: url('/src/assets/fonts/Ubuntu-Medium.ttf');
+}
+@font-face {
+   font-family: UbuntuBold;
+   src: url('/src/assets/fonts/Ubuntu-Bold.ttf');
+}
+
+// Weights
+$OverpassLight: 300;
+$OverpassSemiBold: 600;
+
+// Layouts
+$isDesktop: 1440px;
+$maxWidthSection: (
+   mobile: 1000px,
+   desktop: 1000px,
+);
+
+// Padding
+$infoPadding: 0 38px;
+
+// Colors
+$LightRed: hsl(356, 100%, 66%); // text button
+$VeryLightRed: hsl(355, 100%, 74%); // bg button hover
+$VeryDarkBlue: hsl(208, 49%, 24%);
+
+$White: hsl(0, 0%, 100%);
+$GrayishBlue: hsl(240, 2%, 79%);
+$VeryDarkGrayishBlue: hsl(207, 13%, 34%);
+$VeryDarkBlackBlue: hsl(240, 10%, 16%);
+
+// Background gradient - Intro/CTA mobile nav:
+$MobileNav-VeryLightRed: hsl(13, 100%, 72%);
+$MobileNav-LightRed: hsl(353, 100%, 62%);
+
+// Background gradient - body:
+$VeryDarkGrayBlue: hsl(237, 17%, 21%);
+$VeryDarkDesaturatedBlue: hsl(237, 23%, 32%);
+
+// Font size reference: 16px
+
+// Mixins
+@mixin TitleMobile {
+   font-weight: $OverpassSemiBold;
+   font-size: 28px;
+   font-family: Overpass;
+   color: $VeryDarkBlue;
+}
+
+@mixin Background {
+   position: absolute;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+}
+
+@mixin Paragraph {
+   font-weight: $OverpassLight;
+   font-size: 16px;
+   line-height: 1.75;
+}

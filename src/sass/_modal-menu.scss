@@ -1,0 +1,160 @@
+@use 'variables';
+@use 'sass:color';
+
+#mobile-nav-container {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   z-index: 1000;
+   padding-top: 125px;
+   padding-bottom: 50px;
+   transform: translateX(100%);
+   transition: all 0.2s ease-out;
+   overflow-x: auto;
+
+   .close {
+      position: fixed;
+      border: none;
+      background-color: inherit;
+      top: 60px;
+      right: 25px;
+      transition: all 0.1s linear;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+
+   .mobile-nav {
+      background-color: variables.$White;
+      width: 86%;
+      padding-top: 30px;
+      padding-bottom: 14px;
+      margin: auto;
+      text-align: center;
+      font-weight: variables.$OverpassSemiBold;
+      font-family: Overpass;
+      border-radius: 5px;
+      max-height: 70vh;
+      overflow-y: auto;
+      box-shadow: 5px 5px 20px hsl(0, 0%, 13%, 0.5);
+
+      .menu {
+         & > li {
+            margin-bottom: 32px;
+
+            summary {
+               color: variables.$VeryDarkBlue;
+               font-size: 18px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: max-content;
+               margin: auto;
+
+               span {
+                  padding-right: 8px;
+               }
+
+               .arrow {
+                  transition: all 0.1s linear;
+               }
+
+               &:hover {
+                  cursor: pointer;
+               }
+            }
+
+            .details-options {
+               color: variables.$VeryDarkGrayishBlue;
+               font-size: 16px;
+               background-color: #ddd;
+               width: 70vw;
+               max-width: 274px;
+               margin: auto;
+               border-radius: 5px;
+               margin-top: 22px;
+               padding: 4px 0;
+
+               &__option {
+                  margin: 20px auto;
+
+                  &:hover {
+                     cursor: pointer;
+                  }
+
+                  &:active {
+                     color: variables.$VeryDarkBlue;
+                  }
+               }
+            }
+         }
+
+         & > li:last-child {
+            margin-bottom: 25px;
+         }
+
+         details[open] {
+            .arrow {
+               transform: rotate(-180deg);
+            }
+
+            summary {
+               color: variables.$VeryDarkGrayishBlue;
+            }
+         }
+      }
+
+      .separator {
+         background-color: #ddd;
+         height: 1px;
+         width: 70vw;
+         max-width: 274px;
+         margin: 0 auto 32px;
+      }
+
+      .auth-btn-mobile {
+         display: block;
+         margin: 21px auto;
+         border: none;
+
+         &:hover {
+            cursor: pointer;
+         }
+
+         &.login {
+            font-weight: variables.$OverpassSemiBold;
+            font-size: 18px;
+            font-family: Overpass;
+            color: variables.$VeryDarkBlue;
+            background-color: inherit;
+
+            &:active {
+               color: variables.$VeryDarkBlackBlue;
+            }
+         }
+
+         &.register {
+            font-size: 16px;
+            font-family: UbuntuMedium;
+            color: variables.$White;
+            background: linear-gradient(
+               to right,
+               variables.$MobileNav-VeryLightRed,
+               variables.$MobileNav-LightRed
+            );
+            padding: 13px 40px 17px;
+            border-radius: 50px;
+
+            &:active {
+               background: linear-gradient(
+                  to right,
+                  darken(variables.$MobileNav-VeryLightRed, 5),
+                  darken(variables.$MobileNav-LightRed, 5)
+               );
+            }
+         }
+      }
+   }
+}
