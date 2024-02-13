@@ -9,15 +9,24 @@ main {
       text-align: center;
       margin-top: 102px;
       margin-bottom: 44px;
+      letter-spacing: -1.5px;
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      .title {
+         font-size: 40px;
+         margin-top: 155px;
+         margin-bottom: 54px;
+      }
    }
 }
 
 .middle-container {
    position: relative;
    background-image: url('/src/assets/images/bg-pattern-circles.svg');
-   background-position: 50% -235px;
-   background-size: 600px;
    background-repeat: no-repeat;
+   background-size: 600px;
+   background-position: 50% -235px;
    border-bottom-left-radius: 100px;
    border-top-right-radius: 100px;
    margin-top: 224px;
@@ -38,10 +47,17 @@ main {
       max-width: map-get(variables.$maxWidthSection, mobile);
       margin: auto;
 
-      &__img {
-         width: 382px;
-         position: absolute;
-         top: -186px;
+      &__img-container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+
+         img {
+            width: 382px;
+            position: absolute;
+            top: -186px;
+         }
       }
 
       &__info {
@@ -52,13 +68,53 @@ main {
 
          h3 {
             font-size: 40px;
-            font-weight: variables.$OverpassSemiBold;
+            font-weight: 500;
             line-height: 1.25;
+            letter-spacing: -1px;
             padding-bottom: 16px;
          }
 
          p {
             @include variables.Paragraph;
+         }
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      margin-bottom: 265px;
+      margin-top: 185px;
+      background: none;
+
+      .middle {
+         flex-direction: row;
+         max-width: map-get(variables.$maxWidthSection, desktop);
+         padding: 115px variables.$sectionSidePadding 105px;
+         background-image: url('/src/assets/images/bg-pattern-circles.svg');
+         background-repeat: no-repeat;
+         background-position-x: calc(100% - 475px);
+         background-position-y: 74%;
+         background-origin: content-box;
+
+         &__img-container {
+            flex-grow: 1;
+
+            img {
+               width: 550px;
+               top: -275px;
+               right: 45px;
+            }
+         }
+
+         &__info {
+            width: 50%;
+            text-align: left;
+            margin-top: 0;
+            padding-left: 16px;
+            padding-right: 0;
+
+            p {
+               margin-top: 2px;
+            }
          }
       }
    }

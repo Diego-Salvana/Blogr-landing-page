@@ -23,11 +23,12 @@ $OverpassSemiBold: 600;
 $isDesktop: 1440px;
 $maxWidthSection: (
    mobile: 1000px,
-   desktop: 1000px,
+   desktop: 1600px,
 );
 
 // Padding
-$infoPadding: 0 38px;
+$infoPadding: 0 30px;
+$sectionSidePadding: 134px + 30px;
 
 // Colors
 $LightRed: hsl(356, 100%, 66%); // text button
@@ -68,4 +69,87 @@ $VeryDarkDesaturatedBlue: hsl(237, 23%, 32%);
    font-weight: $OverpassLight;
    font-size: 16px;
    line-height: 1.75;
+   letter-spacing: 0.5px;
+}
+
+@mixin SummaryMenu {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: max-content;
+   margin: auto;
+
+   span {
+      margin-right: 8px;
+   }
+
+   .arrow {
+      transition: all 0.1s linear;
+   }
+
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+%header-button {
+   font-size: 16px;
+   font-family: UbuntuBold;
+   width: 137px;
+   border: 1px solid;
+   padding: 14px 0;
+   border-radius: 50px;
+   transition: all 0.1s linear;
+
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+@mixin BtnWhite {
+   @extend %header-button;
+   background-color: $White;
+   color: $LightRed;
+   border-color: $White;
+
+   &:active {
+      background-color: $VeryLightRed;
+      border-color: $VeryLightRed;
+      color: $White;
+   }
+
+   @media (min-width: 900px) {
+      &:hover {
+         background-color: $VeryLightRed;
+         border-color: $VeryLightRed;
+         color: $White;
+      }
+
+      &:active {
+         background-color: darken($VeryLightRed, 10);
+      }
+   }
+}
+
+@mixin BtnTransparent {
+   @extend %header-button;
+   background-color: inherit;
+   color: $White;
+
+   &:active {
+      background-color: $White;
+      color: $LightRed;
+   }
+
+   @media (min-width: 900px) {
+      &:hover {
+         background-color: $White;
+         color: $LightRed;
+      }
+
+      &:active {
+         background-color: darken($White, 30);
+         border-color: darken($White, 30);
+      }
+   }
 }

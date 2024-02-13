@@ -16,91 +16,28 @@
         <div class="navbar">
           <img class="navbar__logo" src="/src/assets/images/logo.svg" alt="Logo" />
 
-          <ul class="navbar__menu">
-            <li>
-              <details>
-                <summary class="menu-summary">
-                  <span></span>
-                  <img class="arrow" src="" alt="Arrow" />
-                </summary>
-
-                <ul class="details-options">
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary class="menu-summary">
-                  <span></span>
-                  <img class="arrow" src="" alt="Arrow" />
-                </summary>
-
-                <ul class="details-options">
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                </ul>
-              </details>
-            </li>
-
-            <li>
-              <details>
-                <summary class="menu-summary">
-                  <span></span>
-                  <img class="arrow" src="" alt="Arrow" />
-                </summary>
-
-                <ul class="details-options">
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                  <li class="details-options__option">
-                    <span class="text"></span>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+          <div id="navMenuDesktop"></div>
         </div>
 
         <!-- Mobile -->
-        <div class="navbar__btn-mobile">
+        <div class="btn-mobile">
           <button class="hamburger">
             <img src="src/assets/images/icon-hamburger.svg" alt="Menu" />
           </button>
         </div>
 
         <!-- Desktop -->
-        <div class="navbar__btn-desktop">
-          <button class="auth-btn login">Login</button>
-          <button class="auth-btn register">Sing Up</button>
+        <div class="btn-desktop">
+          <button class="auth-btn-desktop login">Login</button>
+          <button class="auth-btn-desktop register">Sing Up</button>
         </div>
       </nav>
 
       <h1>A modern publishing platform</h1>
       <p>Grow your audience and build your online brand</p>
       <div class="btn-container-header">
-        <button class="free">Start for Free</button>
-        <button>Learn More</button>
+        <button class="white">Start for Free</button>
+        <button class="transparent">Learn More</button>
       </div>
     </header>
 
@@ -111,55 +48,7 @@
       </button>
 
       <aside class="mobile-nav">
-        <ul class="menu">
-          <li>
-            <details>
-              <summary>
-                <span>Product</span>
-                <img class="arrow" src="/src/assets/images/icon-arrow-dark.svg" alt="Arrow" />
-              </summary>
-
-              <ul class="details-options">
-                <li class="details-options__option">Overview</li>
-                <li class="details-options__option">Pricing</li>
-                <li class="details-options__option">Marketplace</li>
-                <li class="details-options__option">Features</li>
-                <li class="details-options__option">Integrations</li>
-              </ul>
-            </details>
-          </li>
-
-          <li>
-            <details>
-              <summary>
-                <span>Company</span>
-                <img class="arrow" src="/src/assets/images/icon-arrow-dark.svg" alt="Arrow" />
-              </summary>
-
-              <ul class="details-options">
-                <li class="details-options__option">About</li>
-                <li class="details-options__option">Team</li>
-                <li class="details-options__option">Blog</li>
-                <li class="details-options__option">Careers</li>
-              </ul>
-            </details>
-          </li>
-
-          <li>
-            <details>
-              <summary>
-                <span>Connect</span>
-                <img class="arrow" src="/src/assets/images/icon-arrow-dark.svg" alt="Arrow" />
-              </summary>
-
-              <ul class="details-options">
-                <li class="details-options__option">Contact</li>
-                <li class="details-options__option">Newsletter</li>
-                <li class="details-options__option">LinkedIn</li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+        <!-- insertNavMenu() -->
 
         <div class="separator"></div>
 
@@ -207,7 +96,9 @@
         <div class="bg-img"></div>
 
         <div class="middle">
-          <img class="middle__img" src="src/assets/images/illustration-phones.svg" alt="Phones" />
+          <div class="middle__img-container">
+            <img class="middle__img" src="src/assets/images/illustration-phones.svg" alt="Phones" />
+          </div>
 
           <div class="middle__info">
             <h3>State of the Art Infrastructure</h3>
@@ -254,36 +145,40 @@
 
     <footer>
       <div class="nav-container">
-        <img class="nav-container__logo" src="/src/assets/images/logo.svg" alt="Logo" />
-
-        <div class="nav-container__menu-item">
-          <h6>Product</h6>
-          <ul class="options">
-            <li><span>Overview</span></li>
-            <li><span>Pricing</span></li>
-            <li><span>Marketplace</span></li>
-            <li><span>Features</span></li>
-            <li><span>Integrations</span></li>
-          </ul>
+        <div class="nav-container__logo">
+          <img src="/src/assets/images/logo.svg" alt="Logo" />
         </div>
 
-        <div class="nav-container__menu-item">
-          <h6>Company</h6>
-          <ul class="options">
-            <li><span>About</span></li>
-            <li><span>Team</span></li>
-            <li><span>Blog</span></li>
-            <li><span>Careers</span></li>
-          </ul>
-        </div>
+        <div class="nav-container__menu">
+          <div class="menu-item">
+            <h6>Product</h6>
+            <ul class="options">
+              <li><span>Overview</span></li>
+              <li><span>Pricing</span></li>
+              <li><span>Marketplace</span></li>
+              <li><span>Features</span></li>
+              <li><span>Integrations</span></li>
+            </ul>
+          </div>
 
-        <div class="nav-container__menu-item">
-          <h6>Connect</h6>
-          <ul class="options">
-            <li><span>Contact</span></li>
-            <li><span>Newsletter</span></li>
-            <li><span>LinkedIn</span></li>
-          </ul>
+          <div class="menu-item">
+            <h6>Company</h6>
+            <ul class="options">
+              <li><span>About</span></li>
+              <li><span>Team</span></li>
+              <li><span>Blog</span></li>
+              <li><span>Careers</span></li>
+            </ul>
+          </div>
+
+          <div class="menu-item">
+            <h6>Connect</h6>
+            <ul class="options">
+              <li><span>Contact</span></li>
+              <li><span>Newsletter</span></li>
+              <li><span>LinkedIn</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

@@ -12,12 +12,14 @@ footer {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      max-width: 2200px;
+      margin: auto;
 
       &__logo {
          margin-bottom: 35px;
       }
 
-      &__menu-item {
+      &__menu .menu-item {
          text-align: center;
          margin-top: 40px;
 
@@ -46,7 +48,7 @@ footer {
                      left: 0;
                      bottom: -2px;
                      width: 100%;
-                     height: 2px;
+                     height: 1px;
                      background-color: variables.$GrayishBlue;
                      opacity: 0;
                      transition: all 0.1s linear;
@@ -58,6 +60,49 @@ footer {
                      &::after {
                         opacity: 1;
                      }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      margin-top: 230px;
+      padding-top: 70px;
+      padding-bottom: 60px;
+
+      .nav-container {
+         flex-direction: row;
+         align-items: flex-start;
+         justify-content: space-between;
+         padding-left: 165px;
+         padding-right: 327px;
+
+         &__logo {
+            flex-grow: 1;
+         }
+
+         &__menu {
+            width: 685px;
+            padding-top: 7px;
+            display: flex;
+            justify-content: space-between;
+
+            .menu-item {
+               margin: 0 20px;
+               text-align: left;
+
+               h6 {
+                  font-size: 15px;
+               }
+
+               .options {
+                  font-size: 14px;
+                  margin-top: 38px;
+
+                  li {
+                     margin-bottom: 17px;
                   }
                }
             }

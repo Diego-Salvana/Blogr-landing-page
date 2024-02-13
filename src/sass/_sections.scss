@@ -10,6 +10,7 @@ section {
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
 
       .ilustration-desktop {
          display: none;
@@ -40,5 +41,69 @@ section {
 
    &.second-section .info {
       margin-top: 40px;
+   }
+
+   @media (min-width: variables.$isDesktop) {
+      flex-direction: row-reverse;
+      max-width: map-get(variables.$maxWidthSection, desktop);
+
+      .img-container {
+         flex-grow: 1;
+
+         .ilustration-mobile {
+            display: none;
+         }
+
+         .ilustration-desktop {
+            display: block;
+            position: absolute;
+         }
+      }
+
+      .info {
+         text-align: left;
+         width: 50%;
+         padding-right: 95px;
+
+         h4 {
+            letter-spacing: -0.2px;
+         }
+
+         p {
+            padding-bottom: 77px;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+         }
+      }
+
+      &.first-section {
+         h4:first-child {
+            padding-bottom: 25px;
+         }
+
+         .info {
+            padding-left: variables.$sectionSidePadding;
+            padding-right: 32px;
+         }
+
+         .ilustration-desktop {
+            left: 70px;
+            top: -188px;
+         }
+      }
+
+      &.second-section {
+         flex-direction: row;
+
+         .ilustration-desktop {
+            right: 25px;
+            top: -150px;
+         }
+
+         .info {
+            padding-right: variables.$sectionSidePadding + 10px;
+            padding-left: 15px;
+         }
+      }
    }
 }

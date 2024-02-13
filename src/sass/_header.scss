@@ -40,59 +40,34 @@ header {
       margin-top: 46px;
 
       button {
-         font-family: UbuntuBold;
-         font-size: 16px;
-         width: 137px;
-         color: variables.$White;
-         background-color: inherit;
-         border: 1px solid variables.$White;
-         padding: 14px 0;
-         border-radius: 50px;
-         transition: all 0.1s linear;
-
-         &.free {
-            background-color: variables.$White;
-            border-color: inherit;
-            color: variables.$LightRed;
+         &.white {
+            @include variables.BtnWhite;
             margin-right: 10px;
-
-            &:active {
-               background-color: variables.$VeryLightRed;
-               border-color: variables.$VeryLightRed;
-               color: variables.$White;
-            }
          }
 
-         &:last-child:active {
-            background-color: variables.$White;
-            color: variables.$LightRed;
+         &.transparent {
+            @include variables.BtnTransparent;
          }
+      }
+   }
 
-         &:hover {
-            cursor: pointer;
-         }
+   @media (min-width: variables.$isDesktop) {
+      background-image: url('/src/assets/images/bg-pattern-intro-desktop.svg');
+      background-position: 25% 52.5%;
 
-         @media (min-width: 900px) {
-            &.free:hover {
-               background-color: variables.$VeryLightRed;
-               border-color: variables.$VeryLightRed;
-               color: variables.$White;
+      .bg-img {
+         background: linear-gradient(to right, variables.$VeryLightRed, variables.$LightRed);
+      }
 
-               &:active {
-                  background-color: darken(variables.$VeryLightRed, 10);
-               }
-            }
+      h1 {
+         font-size: 64px;
+         margin-top: 64px;
+         letter-spacing: -2px;
+      }
 
-            &:last-child:hover {
-               background-color: variables.$White;
-               color: variables.$LightRed;
-
-               &:active {
-                  background-color: darken(variables.$White, 30);
-                  border-color: darken(variables.$White, 30);
-               }
-            }
-         }
+      p {
+         font-size: 20px;
+         margin-top: 12px;
       }
    }
 }

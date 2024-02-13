@@ -45,25 +45,10 @@
             margin-bottom: 32px;
 
             summary {
+               @include variables.SummaryMenu;
                color: variables.$VeryDarkBlue;
                font-size: 18px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               width: max-content;
-               margin: auto;
-
-               span {
-                  padding-right: 8px;
-               }
-
-               .arrow {
-                  transition: all 0.1s linear;
-               }
-
-               &:hover {
-                  cursor: pointer;
-               }
+               
             }
 
             .details-options {
