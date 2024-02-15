@@ -3,8 +3,7 @@ type ArrowColor = 'light' | 'dark';
 export function insertNavMenu(container: HTMLElement | null, arrowColor: ArrowColor): void {
    if (!container) return;
 
-   const navMenu = `
-      <ul class="menu">
+   const navMenu = `<ul class="menu">
          <li>
             <details>
                <summary>
@@ -50,8 +49,8 @@ export function insertNavMenu(container: HTMLElement | null, arrowColor: ArrowCo
                </ul>
             </details>
          </li>
-      </ul>
-   `;
+      </ul>`;
+   //
 
    container.insertAdjacentHTML('afterbegin', navMenu);
 }
