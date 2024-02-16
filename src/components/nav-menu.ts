@@ -8,7 +8,7 @@ export function insertNavMenu(container: HTMLElement | null, arrowColor: ArrowCo
             <details>
                <summary>
                   <span>Product</span>
-                  <img class="arrow" src="/src/assets/images/icon-arrow-${arrowColor}.svg" alt="Arrow" />
+                  <img class="arrow" src="icon-arrow-${arrowColor}.svg" alt="Arrow" />
                </summary>
 
                <ul class="details-options">
@@ -24,7 +24,7 @@ export function insertNavMenu(container: HTMLElement | null, arrowColor: ArrowCo
             <details>
                <summary>
                   <span>Company</span>
-                  <img class="arrow" src="/src/assets/images/icon-arrow-${arrowColor}.svg" alt="Arrow" />
+                  <img class="arrow" src="icon-arrow-${arrowColor}.svg" alt="Arrow" />
                </summary>
 
                <ul class="details-options">
@@ -39,7 +39,7 @@ export function insertNavMenu(container: HTMLElement | null, arrowColor: ArrowCo
             <details>
                <summary>
                   <span>Connect</span>
-                  <img class="arrow" src="/src/assets/images/icon-arrow-${arrowColor}.svg" alt="Arrow" />
+                  <img class="arrow" src="icon-arrow-${arrowColor}.svg" alt="Arrow" />
                </summary>
 
                <ul class="details-options">
