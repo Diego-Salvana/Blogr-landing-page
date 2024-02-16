@@ -11,7 +11,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Blogr landing page](https://github.com/Diego-Salvana/Blogr-landing-page/)
+- Live Site URL: [Blogr landing page](https://diego-salvana.github.io/Blogr-landing-page/)
 
 ### Built with
 
